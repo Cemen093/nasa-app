@@ -1,0 +1,20 @@
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+app-input-box {
+  width: 500px;
+}
+
+app-button {
+  margin: 10px 30px;
+}

@@ -1,0 +1,4 @@
+<div class="input-box">
+  <label>{{ label }}</label>
+  <input [type]="type" [(ngModel)]="value" (ngModelChange)="valueChange.emit($event)">
+</div>

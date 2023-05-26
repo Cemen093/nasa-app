@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">Детали астероида</h1>
+
+  <div *ngIf="asteroidDetails" class="content-container asteroid-details-container">
+    <div class="asteroid-info">
+      <h3 class="asteroid-name"><span class="title">Название:</span> {{ asteroidDetails.name }}</h3>
+      <div class="asteroid-diameter">
+        <span class="title">Оценочный диаметр (км):</span> {{ asteroidDetails.estimated_diameter.kilometers.estimated_diameter_min }}
+        - {{ asteroidDetails.estimated_diameter.kilometers.estimated_diameter_max }}
+      </div>
+      <div class="asteroid-magnitude">
+        <span class="title">Абсолютная звездная величина:</span> {{ asteroidDetails.absolute_magnitude_h }}
+      </div>
+      <div class="asteroid-approach">
+        <span class="title">Дата ближайшего сближения:</span> {{ asteroidDetails.close_approach_data[0].close_approach_date_full }}
+      </div>
+      <div class="asteroid-miss-distance">
+        <span class="title">Расстояние при сближении:</span> {{ asteroidDetails.close_approach_data[0].miss_distance.kilometers }} км
+      </div>
+      <div class="asteroid-velocity">
+        <span class="title">Скорость при сближении:</span> {{ asteroidDetails.close_approach_data[0].relative_velocity.kilometers_per_hour }} км/ч
+      </div>
+      <div class="asteroid-hazardous">
+        <span class="title">Потенциально опасный астероид:</span> {{ asteroidDetails.is_potentially_hazardous_asteroid ? 'Да' : 'Нет' }}
+      </div>
+      <div class="asteroid-link">
+        <span class="title">Ссылка NASA JPL:</span> <a href="{{ asteroidDetails.nasa_jpl_url }}" target="_blank">{{ asteroidDetails.nasa_jpl_url }}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Данные EPIC</h1>
+
+  <div class="content-container input-section">
+    <app-input-box type="date" label="Дата:" [(value)]="date"/>
+    <app-select-box label="Ровер" [options]="typesColor" [(selectedOption)]="typeColor"></app-select-box>
+    <app-button (onClick)="getEpicData(date, typeColor)">Отправить запрос</app-button>
+  </div>
+
+  <app-spinner [isLoading]="isLoading"></app-spinner>
+
+  <div *ngIf="epicData.length > 0" class="content-container epic-data">
+    <h2>Данные EPIC</h2>
+    <div *ngFor="let data of epicData" class="epic-item">
+      <div><span class="bold">Идентификатор: </span>{{ data.identifier }}</div>
+      <div><span class="bold">Положение спутника в космосе:</span>
+        x={{ data.dscovr_j2000_position.x }},
+        y={{ data.dscovr_j2000_position.y }},
+        z={{ data.dscovr_j2000_position.z }}
+      </div>
+      <div><span class="bold">Координаты центра тяжести</span>
+        lat={{ data.centroid_coordinates.lat }},
+        lon={{ data.centroid_coordinates.lon }}
+      </div>
+      <div><span class="bold">Подпись </span>{{ data.caption }}</div>
+      <div><span class="bold">Название картинки: </span>{{data.image}}</div>
+      <button class="download-button" (click)="downloadImage(data)">Скачать</button>
+    </div>
+  </div>
+</div>

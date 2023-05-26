@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="apod" class="apod-details d-flex flex-column align-items-center">
+    <h1 class="text-center">{{ apod.title }}</h1>
+    <div class="explanation">{{ apod.explanation }}</div>
+    <div>HD: <a [href]="apod.hdurl">{{apod.hdurl}}</a></div>
+    <div class="one-image-container">
+      <img class="one-image" [src]="apod.url" alt="{{ apod.title }}">
+      <div>Date: {{apod.date}}</div>
+    </div>
+  </div>
+</div>

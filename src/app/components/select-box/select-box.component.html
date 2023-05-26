@@ -1,0 +1,6 @@
+<div class="select-box">
+  <label>{{ label }}</label>
+  <select [(ngModel)]="selectedOption" (ngModelChange)="selectedOptionChange.emit($event)">
+    <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+  </select>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center">Данные с Марса</h1>
+  <app-spinner [isLoading]="loading"></app-spinner>
+
+  <div class="content-container input-section">
+    <app-input-box label="Сол:" [(value)]="sol"></app-input-box>
+    <app-select-box label="Ровер" [options]="rovers" [(selectedOption)]="rover"></app-select-box>
+    <app-select-box label="Ровер" [options]="getCameraOptions()" [(selectedOption)]="camera"></app-select-box>
+    <app-input-box label="Страница:" [(value)]="page"></app-input-box>
+    <app-button (onClick)="getMarsData()">Отправить запрос</app-button>
+  </div>
+
+  <div *ngIf="marsData" class="content-container mars-data-container">
+    <h2 *ngIf="marsData.photos.length === 0" class="no-photo">По указанным данным нет ни одной фотографии.</h2>
+    <div *ngFor="let photo of marsData.photos" class="photo">
+      <div class="text"><span class="bold">ID: </span>{{ photo.id }}</div>
+      <div class="text"><span class="bold">Sol: </span>{{ photo.sol }}</div>
+      <div class="text"><span class="bold">Камера: </span>{{ photo.camera.name }}</div>
+      <div class="text"><span class="bold">Дата на Земле: </span>{{ photo.earth_date }}</div>
+      <div class="text"><span class="bold">URL : </span><a [href]="photo.img_src">{{photo.img_src}}</a></div>
+      <img [src]="photo.img_src" alt="Mars Photo">
+    </div>
+  </div>
+</div>

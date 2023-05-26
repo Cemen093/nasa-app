@@ -1,0 +1,41 @@
+.asteroid-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asteroid-info {
+  padding: 20px;
+  background-color: #B5B8B1;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.asteroid-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.asteroid-diameter,
+.asteroid-magnitude,
+.asteroid-approach,
+.asteroid-miss-distance,
+.asteroid-velocity,
+.asteroid-hazardous,
+.asteroid-link {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.asteroid-link a {
+  text-decoration: underline;
+}
+
+.asteroid-link a:hover {
+  text-decoration: none;
+}

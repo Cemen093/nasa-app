@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">Данные о Земле</h1>
+
+  <div class="content-container input-section">
+    <app-input-box type="number" label="Широта:" [(value)]="latitude"/>
+    <app-input-box type="number" label="Долгота:" [(value)]="longitude"/>
+    <app-input-box type="number" label="Диаметр:" [(value)]="diameter"/>
+    <app-input-box type="date" label="Дата:" [(value)]="date"/>
+    <app-button (onClick)="getEarthData()">Отправить запрос</app-button>
+  </div>
+
+  <app-spinner [isLoading]="isLoading"></app-spinner>
+  <div *ngIf="earthData" class="content-container earth-data-container">
+    <div><span class="bold">Дата: </span>{{ earthData.date }}</div>
+    <div><span class="bold">Идентификатор: </span>{{ earthData.id }}</div>
+    <div><span class="bold">Ресурс: </span>{{ earthData.resource.dataset }}</div>
+    <div><span class="bold">Планета: </span>{{ earthData.resource.planet }}</div>
+    <div><span class="bold">Версия сервиса: </span>{{ earthData.service_version }}</div>
+    <div><span class="bold">URL: </span><a href="{{ earthData.url }}" target="_blank">{{ earthData.url }}</a></div>
+
+    <img [src]="earthData.url" [alt]="earthData.id">
+  </div>
+</div>

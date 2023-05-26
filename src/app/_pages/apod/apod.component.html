@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">Астронет</h1>
+
+  <div class="content-container input-section">
+    <app-input-box type="number" label="Количество:" [(value)]="count"/>
+    <app-button (onClick)="getApodFromRangeCount()">Отправить запрос</app-button>
+  </div>
+
+  <div class="content-container input-section">
+    <app-input-box type="date" label="Дата:" [(value)]="date"/>
+    <app-button (onClick)="getApodFromDate()">Отправить запрос</app-button>
+  </div>
+
+  <div class="content-container input-section">
+    <app-input-box type="date" label="Начальная дата:" [(value)]="start_date"/>
+    <app-input-box type="date" label="Конечная дата:" [(value)]="end_date"/>
+    <app-button (onClick)="getApodFromRangeDate()">Отправить запрос</app-button>
+  </div>
+
+  <app-spinner [isLoading]="isLoading"></app-spinner>
+
+  <div *ngIf="!isLoading && images" class="content-container images-container">
+    <div class="image-container" *ngFor="let image of images; let i = index">
+      <img [src]="image.url" alt="{{ image.title }}" (click)="openImageDetails(image)">
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && image" class="content-container one-image-container">
+    <img class="one-image" [src]="image.url" alt="{{ image.title }}" (click)="openImageDetails(image)">
+  </div>
+</div>

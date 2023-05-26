@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #9C9C9C;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.content-container {
+  padding: 5px 10px;
+  border: 1px solid #6C6874;
+  margin: 20px 10px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  padding: 3px;
+  margin: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.one-image-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.one-image {
+  width: 99%;
+  height: auto;
+}
+

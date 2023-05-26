@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="text-center">Настройки</h1>
+  <div class="content-container form-container">
+    <app-input-box type="text" label="API key:" [(value)]="apiKey"/>
+    <div class="buttons-container">
+      <app-button (onClick)="saveApiKey()">Сохранить</app-button>
+      <app-button (onClick)="clearApiKey()">Удалить</app-button>
+    </div>
+    <a href="https://www.nasa.gov/" target="_blank">Ссылка на страницу регистрации ключа на сайте NASA</a>
+  </div>
+</div>

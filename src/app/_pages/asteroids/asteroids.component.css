@@ -1,0 +1,51 @@
+.date-tabs-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.date-tab {
+  margin: 3px;
+}
+
+.date-tab button {
+  padding: 5px 15px;
+}
+
+.date-tab button.active {
+  border: 3px solid black;
+}
+
+.asteroids-container {
+  justify-content: space-around;
+}
+
+.asteroids-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.asteroid-card {
+  padding: 10px;
+  min-width: 400px;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #B5B8B1;
+  cursor: pointer;
+}
+
+.asteroid-name {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.asteroid-diameter,
+.asteroid-approach {
+  font-size: 14px;
+}

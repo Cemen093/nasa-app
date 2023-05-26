@@ -1,0 +1,18 @@
+.epic-data {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.epic-item {
+  padding: 10px;
+  min-width: 400px;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #B5B8B1;
+}
+
+.epic-data img {
+  max-width: 100%;
+}

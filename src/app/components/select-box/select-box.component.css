@@ -1,0 +1,23 @@
+.select-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 172px;
+  min-height: 50px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  padding: 1px 2px;
+  margin: 0;
+  border: 3px solid black;
+  text-align: center;
+}
+
